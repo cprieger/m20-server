@@ -5,6 +5,7 @@
 var Promise = require('bluebird');
 var buildingList = require('../resources/buildings.js').buildingList;
 var supplies = require('./supplies.js');
+var monsters = require('./monster.js');
 
 module.exports = {
     generateBuilding: function (numberToGenerate) {
@@ -33,6 +34,13 @@ module.exports = {
                         return building;
                     });
 
+            })
+            .map(function(building){
+                return monsters.generateMonster(building.spawnCount)
+                    .then(function(monsters){
+                        building.monsters = monsters;
+                        return building;
+                    });
             });
     },
 };
