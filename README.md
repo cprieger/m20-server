@@ -14,10 +14,10 @@ Roll 1 D20 for each combat action taking place.
 * 5-10 failure: Task failed.
 * 1-5 super failure: Not only did you fail your task but it’s going to cost you something. Whatever equipment you were using in the task breaks.
 
-####Action Points::
+####Action Points
 	* Each player starts at 10 action points everyday.
 
-####Inventory::
+####Inventory
 * Start with a 5 slot bag
 * Can  pick up better bags for inventory
 
@@ -29,10 +29,12 @@ Structure size is small, medium, or large.
 * Medium structures have 2 resources and 2 enemy spawns.
 * Large structures have 3 resourrces and 3 enemy spawns.
 
-####Stats:: Start out with a base of 1 in each catagory
+####Stats
+Start out with a base of 1 in each catagory
 * Strength- Melee weapons
 * Marksmenship- Shoot range weapons
-* Scavenging- Gather more resources (Can generate 1 resource point for them specifically) Every 2 stat points is an additional resource of your choice.
+* Scavenging- Gather more resources (Can generate 1 resource point for them specifically)
+	* Every 2 stat points is an additional resource of your choice.
 * Building- Build better defense for base
 * Crafting- 
 	* Hit 4- unlock COMMON crafting (i.e. baseball bat)
@@ -42,7 +44,7 @@ Structure size is small, medium, or large.
 	* Every 2 skill points is 1 extra action point per day
 
 ####Resources:
-Resources are associated with a building. A hospital which is a large structure would have 3 resources that are medical supplies. Whereas a Home Depot which is a large structure would have 3 resources that are 1 weapon, 1 building resource, and 1 food.
+Resources are associated with a building. A hospital which is a large structure would have 3 resources that are medical supplies. Whereas a construction store which is a large structure would have 3 resources that are 1 weapon, 1 building resource, and 1 food.
 The resource types are weapons, building resources, food, and medical.
 Weapons:
 Weapons are an item that increase your combat effectiveness. This is also broken down in to 3 categories which are common weapons, uncommon weapons, and rare weapons.
