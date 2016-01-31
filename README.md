@@ -69,9 +69,9 @@ Weapons are an item that increase your combat effectiveness. This is also broken
 * You are a mad man target 4 enemies at once.
 * Requires 5 strength.
 
-####XP::
+####XP
 Even split of xp betweeen attackers unless 1st attacker kills creature all xp goes to that player
-##Level::
+####Level
 For each level gain that level amt in skill points
 * From level 1-2:: 200xp
 * 2-3:: 300xp
@@ -83,7 +83,7 @@ For each level gain that level amt in skill points
 * 8-9:: 900xp
 * 9-10:: 1000xp
 
-##Health::
+####Health
 * Level 1- 100
 * Level 2- 120
 * Level 3- 140
