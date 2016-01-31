@@ -7,17 +7,23 @@ module.exports = {
         {
             id: 1,
             name: 'Fuel Efficient Vehicle',
-            resources: 1
+            supplies: {
+                crafting: 1
+            },
         },
         {
             id: 2,
             name: 'Gas Guzzling SUV',
-            resources: 2
+            supplies: {
+                crafting: 2
+            },
         },
         {
             id: 3,
             name: '18-Wheeler',
-            resources: 3
+            supplies: {
+                crafting: 3
+            },
         },
     ]
 };

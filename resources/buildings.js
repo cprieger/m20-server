@@ -19,7 +19,7 @@ module.exports = {
             name: 'Hardware Store of Doom',
             buildingSize: 'Medium',
             supplies: {
-                building: 2,
+                crafting: 2,
                 meleeWeapons: 2
             },
             spawnCount: 2
@@ -29,7 +29,7 @@ module.exports = {
             name: 'Dr. Franks Pharmacy',
             buildingSize: 'Medium',
             supplies: {
-                building: 2,
+                crafting: 2,
                 medical: 2
             },
             spawnCount: 3

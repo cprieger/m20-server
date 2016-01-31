@@ -4,6 +4,8 @@
 
 var Promise = require('bluebird');
 var vehicleList = require('../resources/vehicles.js').vehicleList;
+var supplies = require('./supplies.js');
+
 
 module.exports = {
     generateVehicle: function (numberToGenerate) {
@@ -23,6 +25,14 @@ module.exports = {
             console.log('vehicles Found');
 
             return vehicles;
-        });
+        })
+            .map(function(vehicle){
+                return supplies.generateSupplies(vehicle.supplies)
+                    .then(function(supplyList){
+                        vehicle.supplyList = supplyList;
+                        return vehicle;
+                    });
+
+            });
     },
 };

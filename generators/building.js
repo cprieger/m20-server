@@ -4,6 +4,7 @@
 
 var Promise = require('bluebird');
 var buildingList = require('../resources/buildings.js').buildingList;
+var supplies = require('./supplies.js');
 
 module.exports = {
     generateBuilding: function (numberToGenerate) {
@@ -21,10 +22,17 @@ module.exports = {
                 i++;
             }
 
-
             console.log('Buildings Found');
 
             return buildings;
-        });
+        })
+            .map(function(building){
+                return supplies.generateSupplies(building.supplies)
+                    .then(function(supplyList){
+                        building.supplyList = supplyList;
+                        return building;
+                    });
+
+            });
     },
 };
