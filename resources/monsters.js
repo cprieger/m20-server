@@ -33,7 +33,7 @@ module.exports = {
          {
             id: 5,
             name: 'Frankenstein',
-            description: 'Flings bolts of lightning, very frightening. Player is paralyzed and can't attack nextround. ,
+            description: 'Flings bolts of lightning, very frightening. Player is paralyzed and cant attack next round. ',
             HPAmount: 250
         },
         {
@@ -63,7 +63,7 @@ module.exports = {
         {
             id: 10,
             name: 'Windego',
-            description: 'Can possess you and turn yoou on your teammates.',
+            description: 'Can possess you and turn you on your teammates.',
             HPAmount: 400
         },
     ]
