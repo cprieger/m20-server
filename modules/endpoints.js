@@ -7,9 +7,10 @@ var tile = require('../generators/tile.js');
 var express = require('express');
 var router = express.Router();
 var Promise = require('bluebird');
+path = require('path');
 
 router.get('/', function (req, res) {
-    res.send('Hello World!');
+    res.sendFile(path.join(__dirname + '/index.html'));
 });
 
 router.get('/tile', function (req, res) {
