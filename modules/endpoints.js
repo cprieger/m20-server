@@ -4,18 +4,25 @@
 
 var tile = require('../generators/tile.js');
 
-module.exports = {
-    addEndpointsToApp: function (app) {
-        app.get('/', function (req, res) {
-            res.send('Hello World!');
+var express = require('express');
+var router = express.Router();
+var Promise = require('bluebird');
+
+router.get('/', function (req, res) {
+    res.send('Hello World!');
+});
+
+router.get('/tile', function (req, res) {
+
+    return tile.generateTile(req).then(
+        function (results) {
+            res.json(results);
+        })
+        .catch(function(err){
+            res.send(err);
         });
+});
 
-        app.get('/tile', function (req, res) {
+console.log('Endpoints were set.');
 
-            res.send(tile.generateTile());
-        });
-
-        console.log('Endpoints were set.');
-        return app;
-    },
-};
+module.exports = router;
