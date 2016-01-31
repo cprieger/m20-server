@@ -36,7 +36,7 @@ module.exports = {
 
             })
             .map(function(building){
-                return monsters.generateMonster(building.spawnCount)
+                return monsters.generateMonster(building.spawnCount, building.buildingSize)
                     .then(function(monsters){
                         building.monsters = monsters;
                         return building;

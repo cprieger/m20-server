@@ -6,7 +6,7 @@ var Promise = require('bluebird');
 var monsterList = require('../resources/monsters.js').monsterList;
 
 module.exports = {
-    generateMonster: function (numberOfSpawnpoints) {
+    generateMonster: function (numberOfSpawnpoints, buildingSize) {
         console.log('Finding monsters');
         return Promise.try(function () {
 
@@ -24,7 +24,21 @@ module.exports = {
             return monsters;
         })
             .map(function(monster){
-                monster.numberSpawned = Math.floor((Math.random() * 10) + 1);
+                var capacity = 0;
+                if (buildingSize == 'Small')
+                {
+                    capacity = 3;
+                }
+                if (buildingSize == 'Medium')
+                {
+                    capacity = 5;
+                }
+                if (buildingSize == 'Large')
+                {
+                    capacity = 7;
+                }
+
+                monster.numberSpawned = Math.floor((Math.random() * capacity) + 1);
                 return monster;
             });
     },
