@@ -15,11 +15,11 @@ Roll 1 D20 for each combat action taking place.
 * 1-5 super failure: Not only did you fail your task but it’s going to cost you something. Whatever equipment you were using in the task breaks.
 
 ####Action Points::
-	*Each player starts at 10 action points everyday.
+	* Each player starts at 10 action points everyday.
 
 ####Inventory::
-*Start with a 5 slot bag
-*Can  pick up better bags for inventory
+* Start with a 5 slot bag
+* Can  pick up better bags for inventory
 
 ####Structures
 Each tile has 1 structure on it.
@@ -30,16 +30,16 @@ Structure size is small, medium, or large.
 * Large structures have 3 resourrces and 3 enemy spawns.
 
 ####Stats:: Start out with a base of 1 in each catagory
-*Strength- Melee weapons
-*Marksmenship- Shoot range weapons
-*Scavenging- Gather more resources (Can generate 1 resource point for them specifically) Every 2 stat points is an additional resource of your choice.
-*Building- Build better defense for base
-*Crafting- 
-	*Hit 4- unlock COMMON crafting (i.e. baseball bat)
-	*Hit 7- unlock UNCOMMON crafting (i.e. baseball bat w/ barbed wire)
-	*Hit 10- unlock RARE crafting (i.e. napalm bat)
-*Stamina- increase number of action points per day
-	*Every 2 skill points is 1 extra action point per day
+* Strength- Melee weapons
+* Marksmenship- Shoot range weapons
+* Scavenging- Gather more resources (Can generate 1 resource point for them specifically) Every 2 stat points is an additional resource of your choice.
+* Building- Build better defense for base
+* Crafting- 
+	* Hit 4- unlock COMMON crafting (i.e. baseball bat)
+	* Hit 7- unlock UNCOMMON crafting (i.e. baseball bat w/ barbed wire)
+	* Hit 10- unlock RARE crafting (i.e. napalm bat)
+* Stamina- increase number of action points per day
+	* Every 2 skill points is 1 extra action point per day
 
 ####Resources:
 Resources are associated with a building. A hospital which is a large structure would have 3 resources that are medical supplies. Whereas a Home Depot which is a large structure would have 3 resources that are 1 weapon, 1 building resource, and 1 food.
@@ -71,27 +71,27 @@ Weapons are an item that increase your combat effectiveness. This is also broken
 Even split of xp betweeen attackers unless 1st attacker kills creature all xp goes to that player
 ##Level::
 For each level gain that level amt in skill points
-*From level 1-2:: 200xp
-2-3:: 300xp
-3-4:: 400xp
-4-5:: 500xp
-5-6:: 600xp
-6-7:: 700xp
-7-8:: 800xp
-8-9:: 900xp
-9-10:: 1000xp
+* From level 1-2:: 200xp
+* 2-3:: 300xp
+* 3-4:: 400xp
+* 4-5:: 500xp
+* 5-6:: 600xp
+* 6-7:: 700xp
+* 7-8:: 800xp
+* 8-9:: 900xp
+* 9-10:: 1000xp
 
 ##Health::
-*Level 1- 100
-Level 2- 120
-Level 3- 140
-Level 4- 160
-Level 5- 180
-Level 6- 200
-Level 7- 220
-Level 8- 240
-Level 9- 260
-Level 10- 280
+* Level 1- 100
+* Level 2- 120
+* Level 3- 140
+* Level 4- 160
+* Level 5- 180
+* Level 6- 200
+* Level 7- 220
+* Level 8- 240
+* Level 9- 260
+* Level 10- 280
 
 ####Characters:
 Each player starts with 10 stats spread into whatever skill they want.
