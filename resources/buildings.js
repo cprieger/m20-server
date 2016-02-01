@@ -29,7 +29,8 @@ module.exports = {
             name: 'Dr. Franks Pharmacy',
             buildingSize: 'Medium',
             supplies: {
-                crafting: 2,
+                crafting: 1,
+                crafting: 1,
                 medical: 2
             },
             spawnCount: 3
@@ -39,7 +40,9 @@ module.exports = {
             name: 'Bloodsucking Bank',
             buildingSize: 'Medium',
             supplies: {
-                crafting: 2
+                crafting: 2,
+                meleeWeapons: 1,
+                medical: 1
             },
             spawnCount: 2
         },
@@ -48,7 +51,8 @@ module.exports = {
             name: 'King Tuts Jewelry Store' ,
             buildingSize: 'Small',
             supplies: {
-                crafting: 1
+                crafting: 1,
+                rangedWeapons: 1
             },
             spawnCount: 1
         },
@@ -57,7 +61,9 @@ module.exports = {
             name: 'The Dreaded Armada Gunstore',
             buildingSize: 'Large',
             supplies: {
-                rangedWeapons: 3
+                rangedWeapons: 3,
+                meleeWeapons: 1,
+                crafting: 1
             },
             spawnCount: 3
         },

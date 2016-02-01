@@ -75,6 +75,15 @@ module.exports = {
             quality: 'rare',
             rollModifier: 3,
         },
+        {
+            id: 6,
+            name: 'Tater Gun',
+            description: 'Incapacitates Enemy For Round',
+            lvl: 5,
+            materials: [ 'pipe', 'rubber', 'thread', 'gasoline', 'any additional item for ammo'],
+            quality: 'uncommon',
+            rollModifier: 2,
+        },
     ],
     meleeList: [
         {
@@ -107,11 +116,11 @@ module.exports = {
         {
             id: 4,
             name: 'Samarai Sword',
-            description: 'On a unbuffed 18 or higher role. Enemy loses a limb. If all limbs are gone enemy cant attack.',
-            lvl: 8,
+            description: 'On a super hit. Enemy loses a limb. If all limbs are gone enemy cant attack.',
+            lvl: 5,
             materials: ['wood', 'steel', 'sharpening stone'],
-            quality: 'rare',
-            rollModifier: 3,
+            quality: 'uncommon',
+            rollModifier: 2,
         },
         {
             id: 5,
@@ -121,6 +130,15 @@ module.exports = {
             materials: ['plastic', 'steel', 'gasoline', 'spring', 'machinery', 'sharpening stone'],
             quality: 'rare',
             rollModifier: 3,
+        },
+        {
+            id: 6,
+            name: 'Pipe Hammer',
+            description: 'A simple yet useful hammer.',
+            lvl: 2,
+            materials: ['pipe', 'thread', 'sharpening stone', 'sharpening stone'],
+            quality: 'common',
+            rollModifier: 1
         },
     ],
     buildingList: [

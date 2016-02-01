@@ -27,15 +27,15 @@ module.exports = {
                 var capacity = 0;
                 if (buildingSize == 'Small')
                 {
-                    capacity = 3;
+                    capacity = 1;
                 }
                 if (buildingSize == 'Medium')
                 {
-                    capacity = 5;
+                    capacity = 2;
                 }
                 if (buildingSize == 'Large')
                 {
-                    capacity = 7;
+                    capacity = 3;
                 }
 
                 monster.numberSpawned = Math.floor((Math.random() * capacity) + 1);
