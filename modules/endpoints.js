@@ -3,6 +3,7 @@
  */
 
 var tile = require('../generators/tile.js');
+var supplies = require('../generators/supplies.js');
 
 var express = require('express');
 var router = express.Router();
@@ -15,6 +16,21 @@ router.get('/', function (req, res) {
 router.get('/tile', function (req, res) {
 
     return tile.generateTile(req).then(
+        function (results) {
+            res.json(results);
+        })
+        .catch(function(err){
+            res.send(err);
+        });
+});
+
+router.get('/scavenge', function (req, res) {
+
+    var level = req.query.level;
+
+    var amountToGenerate = Math.floor(level / 2);
+
+    return supplies.getRandomSupply(amountToGenerate).then(
         function (results) {
             res.json(results);
         })
