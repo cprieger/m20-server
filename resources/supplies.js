@@ -141,48 +141,6 @@ module.exports = {
             rollModifier: 1
         },
     ],
-    buildingList: [
-        {
-            id: 1,
-            name: 'Boards and Nails',
-            description: 'Reduces Number of enemies by 1 during nightfall.',
-            lvl: 1,
-            quality: 'common',
-            materials: ['wood', 'nails']
-        },
-        {
-            id: 2,
-            name: 'Hole with Sticks',
-            description: 'Reduces Number of Enemies by 2 during nightfall.',
-            lvl: 2,
-            quality: 'common',
-            materials: ['wood', 'nails', 'shovel']
-        },
-        {
-            id: 3,
-            name: 'Tower',
-            description: 'Reduces Number of Enemies by 5 during nightfall.',
-            lvl: 5,
-            quality: 'uncommon',
-            materials: ['wood','wood', 'wood', 'nails', 'shovel']
-        },
-        {
-            id: 4,
-            name: 'Wire Fence',
-            description: 'Reduces Number of Enemies by 6 during nightfall.',
-            lvl: 6,
-            quality: 'uncommon',
-            materials: ['wood', 'wood', 'nails', 'wire', 'wire' ]
-        },
-        {
-            id: 5,
-            name: 'Electric Fence',
-            description: 'Reduces Number of Enemies by 8 during nightfall.',
-            lvl: 8,
-            quality: 'rare',
-            materials: ['wood', 'wood', 'nails', 'wire', 'wire', 'machinery', 'gasoline' ]
-        },
-    ],
     craftingList: [
         {
             id: 1,
