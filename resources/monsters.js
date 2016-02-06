@@ -24,7 +24,7 @@ module.exports = {
             id: 3,
             name: 'Vampire',
             description: 'A big buck toothed baddy',
-            ability: 'Each hit it lands sucks that much health to you and gains that much.'
+            ability: 'Each hit it lands sucks that much health to you and gains that much.',
             HPAmount: 100
         },
         {

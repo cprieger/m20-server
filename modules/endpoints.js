@@ -39,6 +39,34 @@ router.get('/scavenge', function (req, res) {
         });
 });
 
+router.get('/craftableItemList', function (req, res) {
+
+    var materials = undefined;
+
+    return supplies.findCraftableItem(materials).then(
+        function (results) {
+            res.json(results);
+        })
+        .catch(function(err){
+            res.send(err);
+        });
+});
+
+router.post('/findCraftableItem', function (req, res) {
+
+    console.log('Got %s', req.params);
+    var materials = req.body.materials;
+    console.log('Got %s', materials);
+
+    return supplies.findCraftableItem(materials).then(
+        function (results) {
+            res.json(results);
+        })
+        .catch(function(err){
+            res.send(err);
+        });
+});
+
 console.log('Endpoints were set.');
 
 module.exports = router;

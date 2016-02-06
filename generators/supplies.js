@@ -3,6 +3,7 @@
  */
 
 var Promise = require('bluebird');
+var _ = require('lodash');
 
 var medicalList = require('../resources/supplies.js').medicalList;
 var rangedList = require('../resources/supplies.js').rangedList;
@@ -92,5 +93,29 @@ module.exports = {
         genny[supply] = numberToGenerate;
 
         return module.exports.generateSupplies(genny);
+    },
+    findCraftableItem: function (materials) {
+        return Promise.try(function () {
+            var craftableItems = _.union(medicalList, meleeList, rangedList);
+
+            craftableItems = _.filter(craftableItems, function(item){
+                if (materials)
+                {
+                    console.log('Materials: %s Checking: %s', materials, item.materials);
+
+
+                    var matched = _.intersection(materials, item.materials);
+                    console.log('matched: %s', matched);
+                    return matched.length > 0;
+                }
+                else
+                {
+                    return true;
+                }
+            });
+
+            return craftableItems;
+
+        });
     },
 };
