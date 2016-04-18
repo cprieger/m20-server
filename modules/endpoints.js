@@ -4,6 +4,7 @@
 
 var tile = require('../generators/tile.js');
 var supplies = require('../generators/supplies.js');
+var land = require('../generators/land.js');
 
 var express = require('express');
 var router = express.Router();
@@ -19,7 +20,7 @@ router.get('/tile', function (req, res) {
         function (results) {
             res.json(results);
         })
-        .catch(function(err){
+        .catch(function (err) {
             res.send(err);
         });
 });
@@ -34,7 +35,7 @@ router.get('/scavenge', function (req, res) {
         function (results) {
             res.json(results);
         })
-        .catch(function(err){
+        .catch(function (err) {
             res.send(err);
         });
 });
@@ -47,7 +48,7 @@ router.get('/craftableItemList', function (req, res) {
         function (results) {
             res.json(results);
         })
-        .catch(function(err){
+        .catch(function (err) {
             res.send(err);
         });
 });
@@ -58,11 +59,26 @@ router.post('/findCraftableItem', function (req, res) {
     var materials = req.body.materials;
     console.log('Got %s', materials);
 
-    return supplies.findCraftableItem(materials).then(
-        function (results) {
-            res.json(results);
-        })
-        .catch(function(err){
+    return supplies.findCraftableItem(materials)
+        .then(
+            function (results) {
+                res.json(results);
+            })
+        .catch(function (err) {
+            res.send(err);
+        });
+});
+
+router.post('/generateLand', function (req, res) {
+    var tileCount = (req.body.tileCount) ? req.body.tileCount : 10;
+    console.log('Got %s', tileCount);
+
+    return land.generateLand(tileCount)
+        .then(
+            function (results) {
+                res.json(results);
+            })
+        .catch(function (err) {
             res.send(err);
         });
 });
