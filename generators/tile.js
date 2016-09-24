@@ -10,30 +10,33 @@ var buildingGenerator = require('./building.js');
 var vehicleGenerator = require('./vehicle.js');
 
 
-module.exports = {
-    generateTile: function (req) {
+class TileGenerator {
+    generateTile(req) {
         console.log('Finding Tile');
-        return Promise.try(function () {
+        return Promise.try(() => {
 
-            var tile = tileList[Math.floor((Math.random() * tileList.length))];
-            console.log('Tile Found');
+                var tile = tileList[Math.floor((Math.random() * tileList.length))];
+                console.log('Tile Found');
 
-            return tile;
-        })
-            .then(function (tile) {
+                return tile;
+            })
+            .then((tile) => {
                 return buildingGenerator.generateBuilding(tile.buildingCount)
-                    .then(function (buildings) {
+                    .then((buildings) => {
                         tile.buildings = buildings;
                         return tile;
                     });
             })
-            .then(function (tile) {
+            .then((tile) => {
                 return vehicleGenerator.generateVehicle(tile.vehicleCount)
-                    .then(function (vehicles) {
+                    .then((vehicles) => {
                         tile.vehicles = vehicles;
                         return tile;
                     });
             });
 
-    },
-};
+    }
+}
+;
+
+module.exports = new TileGenerator();
