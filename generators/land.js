@@ -7,10 +7,10 @@ var Promise = require('bluebird');
 var tileGenerator = require('./tile.js');
 
 
-module.exports = {
-    generateLand: function (tileCount) {
+class LandGenerator {
+    generateLand(tileCount) {
         console.log('Building Land');
-        return Promise.try(function () {
+        return Promise.try(() => {
             var landPromises = [];
 
             for (var i = 0; i < tileCount; ++i) {
@@ -18,9 +18,12 @@ module.exports = {
             }
 
             return Promise.all(landPromises)
-                .then(function (lands) {
+                .then((lands) => {
                     return lands;
                 });
         })
-    },
-};
+    }
+}
+;
+
+module.exports = new LandGenerator();

@@ -12,10 +12,10 @@ var craftingList = require('../resources/supplies.js').craftingList;
 
 var supplyCategories = ['medical', 'rangedWeapons', 'meleeWeapons', 'crafting'];
 
-module.exports = {
-    generateSupplies: function (suppliesObject) {
+class SupplyGenerator {
+    generateSupplies(suppliesObject) {
         console.log('Finding supplies');
-        return Promise.try(function () {
+        return Promise.try(() => {
 
                 var supply = {};
                 var supplies = [];
@@ -80,27 +80,28 @@ module.exports = {
 
                 return supplies;
             })
-            .catch(function (err) {
+            .catch((err) => {
                 console.log(err);
             });
 
-    },
-    getRandomSupply: function (numberToGenerate) {
+    }
+
+    getRandomSupply(numberToGenerate) {
 
         var supply = supplyCategories[Math.floor((Math.random() * supplyCategories.length))];
 
         var genny = {};
         genny[supply] = numberToGenerate;
 
-        return module.exports.generateSupplies(genny);
-    },
-    findCraftableItem: function (materials) {
-        return Promise.try(function () {
+        return this.generateSupplies(genny);
+    }
+
+    findCraftableItem(materials) {
+        return Promise.try(() => {
             var craftableItems = _.union(medicalList, meleeList, rangedList);
 
-            craftableItems = _.filter(craftableItems, function(item){
-                if (materials)
-                {
+            craftableItems = _.filter(craftableItems, (item) => {
+                if (materials) {
                     console.log('Materials: %s Checking: %s', materials, item.materials);
 
 
@@ -108,8 +109,7 @@ module.exports = {
                     console.log('matched: %s', matched);
                     return matched.length > 0;
                 }
-                else
-                {
+                else {
                     return true;
                 }
             });
@@ -117,5 +117,9 @@ module.exports = {
             return craftableItems;
 
         });
-    },
-};
+    }
+
+}
+;
+
+module.exports = new SupplyGenerator();

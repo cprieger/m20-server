@@ -5,41 +5,41 @@
 var Promise = require('bluebird');
 var monsterList = require('../resources/monsters.js').monsterList;
 
-module.exports = {
-    generateMonster: function (numberOfSpawnpoints, buildingSize) {
+class MonsterGenerator {
+    generateMonster(numberOfSpawnpoints, buildingSize) {
         console.log('Finding monsters');
-        return Promise.try(function () {
+        return Promise.try(() => {
 
-            var monster = {};
-            var monsters = [];
-            var i = 0;
+                var monster = {};
+                var monsters = [];
+                var i = 0;
 
-            while (i < numberOfSpawnpoints) {
-                monster = monsterList[Math.floor((Math.random() * monsterList.length))];
-                monsters.push(monster);
-                i++;
-            }
-            console.log('monsters Found');
+                while (i < numberOfSpawnpoints) {
+                    monster = monsterList[Math.floor((Math.random() * monsterList.length))];
+                    monsters.push(monster);
+                    i++;
+                }
+                console.log('monsters Found');
 
-            return monsters;
-        })
-            .map(function(monster){
+                return monsters;
+            })
+            .map((monster) => {
                 var capacity = 0;
-                if (buildingSize == 'Small')
-                {
+                if (buildingSize == 'Small') {
                     capacity = 1;
                 }
-                if (buildingSize == 'Medium')
-                {
+                if (buildingSize == 'Medium') {
                     capacity = 2;
                 }
-                if (buildingSize == 'Large')
-                {
+                if (buildingSize == 'Large') {
                     capacity = 3;
                 }
 
                 monster.numberSpawned = Math.floor((Math.random() * capacity) + 1);
                 return monster;
             });
-    },
-};
+    }
+}
+;
+
+module.exports = new MonsterGenerator();

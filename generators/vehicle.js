@@ -7,32 +7,34 @@ var vehicleList = require('../resources/vehicles.js').vehicleList;
 var supplies = require('./supplies.js');
 
 
-module.exports = {
-    generateVehicle: function (numberToGenerate) {
+class VehicleGenerator {
+    generateVehicle(numberToGenerate) {
         console.log('Finding vehicles');
-        return Promise.try(function () {
+        return Promise.try(() => {
 
-            var vehicle = {};
-            var vehicles = [];
-            var i = 0;
-            while (i < numberToGenerate)
-            {
-                vehicle = vehicleList[Math.floor((Math.random() * vehicleList.length))];
-                vehicles.push(vehicle);
+                var vehicle = {};
+                var vehicles = [];
+                var i = 0;
+                while (i < numberToGenerate) {
+                    vehicle = vehicleList[Math.floor((Math.random() * vehicleList.length))];
+                    vehicles.push(vehicle);
 
-                i++;
-            }
-            console.log('vehicles Found');
+                    i++;
+                }
+                console.log('vehicles Found');
 
-            return vehicles;
-        })
-            .map(function(vehicle){
+                return vehicles;
+            })
+            .map((vehicle) => {
                 return supplies.generateSupplies(vehicle.supplies)
-                    .then(function(supplyList){
+                    .then((supplyList) => {
                         vehicle.supplyList = supplyList;
                         return vehicle;
                     });
 
             });
-    },
-};
+    }
+}
+;
+
+module.exports = new VehicleGenerator();
