@@ -142,7 +142,7 @@ class SupplyResource {
                 rollModifier: 1
             },
         ];
-        this.craftingLis = [
+        this.craftingList = [
             {
                 id: 1,
                 name: 'plastic'
