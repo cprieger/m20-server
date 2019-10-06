@@ -2,19 +2,19 @@
  * Created by Chris.Rieger on 1/30/2016.
  */
 
-var Promise = require('bluebird');
-var vehicleList = require('../resources/vehicles.js').vehicleList;
-var supplies = require('./supplies.js');
+const bluebird = require('bluebird');
+const vehicleList = require('../resources/vehicles.js').vehicleList;
+const supplies = require('./supplies.js');
 
 
 class VehicleGenerator {
     generateVehicle(numberToGenerate) {
         console.log('Finding vehicles');
-        return Promise.try(() => {
+        return bluebird.try(() => {
 
-                var vehicle = {};
-                var vehicles = [];
-                var i = 0;
+                let vehicle = {};
+                let vehicles = [];
+                let i = 0;
                 while (i < numberToGenerate) {
                     vehicle = vehicleList[Math.floor((Math.random() * vehicleList.length))];
                     vehicles.push(vehicle);

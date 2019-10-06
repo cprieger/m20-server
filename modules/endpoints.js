@@ -2,22 +2,22 @@
  * Created by Chris.Rieger on 1/30/2016.
  */
 
-var tile = require('../generators/tile.js');
-var supplies = require('../generators/supplies.js');
-var land = require('../generators/land.js');
+const tile = require('../generators/tile.js');
+const supplies = require('../generators/supplies.js');
+const land = require('../generators/land.js');
 
-var express = require('express');
-var router = express.Router();
-var Promise = require('bluebird');
+const express = require('express');
+const router = express.Router();
+const bluebird = require('bluebird');
 
-router.get('/', function (req, res) {
+router.get('/', (req, res)  => {
     res.send('Hello World!');
 });
 
-router.get('/tile', function (req, res) {
+router.get('/tile', (req, res)  => {
 
     return tile.generateTile(req).then(
-        function (results) {
+        (results) => {
             res.json(results);
         })
         .catch(function (err) {
@@ -25,14 +25,14 @@ router.get('/tile', function (req, res) {
         });
 });
 
-router.get('/scavenge', function (req, res) {
+router.get('/scavenge', (req, res)  => {
 
-    var level = req.query.level;
+    const level = req.query.level;
 
-    var amountToGenerate = Math.floor(level / 2);
+    const amountToGenerate = Math.floor(level / 2);
 
     return supplies.getRandomSupply(amountToGenerate).then(
-        function (results) {
+        (results) => {
             res.json(results);
         })
         .catch(function (err) {
@@ -40,45 +40,47 @@ router.get('/scavenge', function (req, res) {
         });
 });
 
-router.get('/craftableItemList', function (req, res) {
+router.get('/craftableItemList', (req, res)  => {
 
-    var materials = undefined;
+    //What was I doing here?
+    //I think this should be passed in. 
+    let materials = undefined;
 
     return supplies.findCraftableItem(materials).then(
-        function (results) {
+        (results) => {
             res.json(results);
         })
-        .catch(function (err) {
+        .catch((err) => {
             res.send(err);
         });
 });
 
-router.post('/findCraftableItem', function (req, res) {
+router.post('/findCraftableItem', (req, res) => {
 
     console.log('Got %s', req.params);
-    var materials = req.body.materials;
+    const materials = req.body.materials;
     console.log('Got %s', materials);
 
     return supplies.findCraftableItem(materials)
         .then(
-            function (results) {
+            (results) => {
                 res.json(results);
             })
-        .catch(function (err) {
+        .catch((err) => {
             res.send(err);
         });
 });
 
-router.post('/generateLand', function (req, res) {
-    var tileCount = (req.body.tileCount) ? req.body.tileCount : 10;
+router.post('/generateLand', (req, res)  => {
+    const tileCount = (req.body.tileCount) ? req.body.tileCount : 10;
     console.log('Got %s', tileCount);
 
     return land.generateLand(tileCount)
         .then(
-            function (results) {
+            (results) => {
                 res.json(results);
             })
-        .catch(function (err) {
+        .catch((err) => {
             res.send(err);
         });
 });

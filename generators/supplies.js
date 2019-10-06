@@ -2,25 +2,25 @@
  * Created by Chris.Rieger on 1/30/2016.
  */
 
-var Promise = require('bluebird');
-var _ = require('lodash');
+const bluebird = require('bluebird');
+const _ = require('lodash');
 
-var medicalList = require('../resources/supplies.js').medicalList;
-var rangedList = require('../resources/supplies.js').rangedList;
-var meleeList = require('../resources/supplies.js').meleeList;
-var craftingList = require('../resources/supplies.js').craftingList;
+const medicalList = require('../resources/supplies.js').medicalList;
+const rangedList = require('../resources/supplies.js').rangedList;
+const meleeList = require('../resources/supplies.js').meleeList;
+const craftingList = require('../resources/supplies.js').craftingList;
 
-var supplyCategories = ['medical', 'rangedWeapons', 'meleeWeapons', 'crafting'];
+const supplyCategories = ['medical', 'rangedWeapons', 'meleeWeapons', 'crafting'];
 
 class SupplyGenerator {
     generateSupplies(suppliesObject) {
         console.log('Finding supplies');
-        return Promise.try(() => {
+        return bluebird.try(() => {
 
-                var supply = {};
-                var supplies = [];
-                var numberGenerated = 0;
-                var numberToGenerate = 0;
+                let supply = {};
+                let supplies = [];
+                let numberGenerated = 0;
+                let numberToGenerate = 0;
 
                 if (suppliesObject.crafting) {
                     console.log('Finding crafting supplies');
@@ -88,24 +88,23 @@ class SupplyGenerator {
 
     getRandomSupply(numberToGenerate) {
 
-        var supply = supplyCategories[Math.floor((Math.random() * supplyCategories.length))];
+        let supply = supplyCategories[Math.floor((Math.random() * supplyCategories.length))];
 
-        var genny = {};
+        let genny = {};
         genny[supply] = numberToGenerate;
 
         return this.generateSupplies(genny);
     }
 
     findCraftableItem(materials) {
-        return Promise.try(() => {
-            var craftableItems = _.union(medicalList, meleeList, rangedList);
+        return bluebird.try(() => {
+            let craftableItems = _.union(medicalList, meleeList, rangedList);
 
             craftableItems = _.filter(craftableItems, (item) => {
                 if (materials) {
                     console.log('Materials: %s Checking: %s', materials, item.materials);
 
-
-                    var matched = _.intersection(materials, item.materials);
+                    const matched = _.intersection(materials, item.materials);
                     console.log('matched: %s', matched);
                     return matched.length > 0;
                 }

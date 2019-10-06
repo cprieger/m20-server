@@ -2,22 +2,22 @@
  * Created by Chris.Rieger on 1/30/2016.
  */
 
-var Promise = require('bluebird');
+const bluebird = require('bluebird');
 
-var tileGenerator = require('./tile.js');
+const tileGenerator = require('./tile.js');
 
 
 class LandGenerator {
     generateLand(tileCount) {
         console.log('Building Land');
-        return Promise.try(() => {
-            var landPromises = [];
+        return bluebird.try(() => {
+            let landbluebirds = [];
 
-            for (var i = 0; i < tileCount; ++i) {
-                landPromises.push(tileGenerator.generateTile());
+            for (let i = 0; i < tileCount; ++i) {
+                landbluebirds.push(tileGenerator.generateTile());
             }
 
-            return Promise.all(landPromises)
+            return bluebird.all(landbluebirds)
                 .then((lands) => {
                     return lands;
                 });
