@@ -2,20 +2,20 @@
  * Created by Chris.Rieger on 1/30/2016.
  */
 
-var Promise = require('bluebird');
+const bluebird = require('bluebird');
 
-var tileList = require('../resources/tiles.js').tileList;
+const tileList = require('../resources/tiles.js').tileList;
 
-var buildingGenerator = require('./building.js');
-var vehicleGenerator = require('./vehicle.js');
+const buildingGenerator = require('./building.js');
+const vehicleGenerator = require('./vehicle.js');
 
 
 class TileGenerator {
     generateTile(req) {
         console.log('Finding Tile');
-        return Promise.try(() => {
+        return bluebird.try(() => {
 
-                var tile = tileList[Math.floor((Math.random() * tileList.length))];
+                let tile = tileList[Math.floor((Math.random() * tileList.length))];
                 console.log('Tile Found');
 
                 return tile;

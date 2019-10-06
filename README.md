@@ -1,6 +1,12 @@
 # m20-server
 Trying my hand at building a service for a game engine. Going to base it around a d20 tabletop game. Once the restful service is up i'll build a UI for it later. For now this is just an exercise of building a service to compliment a tabletop game.
 
+##Update 
+###10/06/2019 
+I want to make this into more of an `adventure combat card game` if that makes any sense... Let's see what the wifey can do on a front end. May make some items for Hacktober 2019. May fall into doing some other things. Just not sure yet what is in store. 
+
+Another thing I would like to do this switch the resources out for SQLite and knex. Muwahahahahahaha. 
+
 ##Endpoints 
 * get localhost:8080/tile to generate a tile to play. 
 * get localhost:8080/scavenge/?level=5 to generate a scavenge at level 5. 

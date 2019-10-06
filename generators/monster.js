@@ -2,17 +2,16 @@
  * Created by Chris.Rieger on 1/31/2016.
  */
 
-var Promise = require('bluebird');
-var monsterList = require('../resources/monsters.js').monsterList;
+const bluebird = require('bluebird');
+const monsterList = require('../resources/monsters.js').monsterList;
 
 class MonsterGenerator {
     generateMonster(numberOfSpawnpoints, buildingSize) {
         console.log('Finding monsters');
-        return Promise.try(() => {
-
-                var monster = {};
-                var monsters = [];
-                var i = 0;
+        return bluebird.try(() => {
+                let monster = {};
+                let monsters = [];
+                let i = 0;
 
                 while (i < numberOfSpawnpoints) {
                     monster = monsterList[Math.floor((Math.random() * monsterList.length))];
@@ -24,7 +23,7 @@ class MonsterGenerator {
                 return monsters;
             })
             .map((monster) => {
-                var capacity = 0;
+                let capacity = 0;
                 if (buildingSize == 'Small') {
                     capacity = 1;
                 }
