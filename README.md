@@ -14,7 +14,7 @@ Another thing I would like to do this switch the resources out for SQLite and kn
 * post localhost:8080/findCraftableItem to get a list of all items craftable from a { materials: array } body.
 
 # **M20**
-## _Rules
+## *Rules*
 
 ## **Gameplay**
 >* You spawn in an empty tile devoid of all monsters.
@@ -120,7 +120,7 @@ Weapons are an item that increase your combat effectiveness. This is also broken
 
 ## **XP**
 Even split of xp between attackers unless 1st attacker kills creature all xp goes to that player.
-###### _Level_
+###### *Level*
 For each level gain that level amt in skill points
 * 1-2: 200xp
 * 2-3: 300xp
@@ -132,7 +132,7 @@ For each level gain that level amt in skill points
 * 8-9: 900xp
 * 9-10: 1000xp
 
-###### _Health_
+###### *Health*
 * Level 1- 100
 * Level 2- 120
 * Level 3- 140
@@ -144,6 +144,6 @@ For each level gain that level amt in skill points
 * Level 9- 260
 * Level 10- 280
 
-###### _Characters_
+###### *Characters*
 * Each player starts with 10 stats spread into whatever skill they want.
 * Every level put that number of stat points into stats. So level 2 is a 2 stat point gain. Level 3 is a 3 stat point gain. 
