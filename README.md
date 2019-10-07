@@ -92,7 +92,7 @@ Maximum stat level is 10.
 >* Salvaging- Break down an item into it's materials. 
     * Every 2 skill points is 1 material to salvage from an item. 
     
-##**Resources:**
+## **Resources:**
 Resources are associated with a building. A hospital which is a large structure would have 3 resources that are medical supplies. Whereas a construction store which is a large structure would have 3 resources that are 1 weapon, 1 building resource, and 1 food.
 The resource types are weapons, building resources, food, and medical.
 Weapons:
