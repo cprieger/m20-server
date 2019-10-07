@@ -1,22 +1,22 @@
 # **m20-server**
 Trying my hand at building a service for a game engine. Going to base it around a d20 tabletop game. Once the restful service is up i'll build a UI for it later. For now this is just an exercise of building a service to compliment a tabletop game.
 
-##*Update* 
-######10/06/2019 
+## *Update* 
+###### 10/06/2019 
 I want to make this into more of an `adventure combat card game` if that makes any sense... Let's see what the wifey can do on a front end. May make some items for Hacktober 2019. May fall into doing some other things. Just not sure yet what is in store. 
 
 Another thing I would like to do this switch the resources out for SQLite and knex. Muwahahahahahaha. 
 
-##**Endpoints**
+## **Endpoints**
 * get localhost:8080/tile to generate a tile to play. 
 * get localhost:8080/scavenge/?level=5 to generate a scavenge at level 5. 
 * get localhost:8080/craftableItemList to get a list of all craftable items. 
 * post localhost:8080/findCraftableItem to get a list of all items craftable from a { materials: array } body.
 
-#**M20**
-##_Rules
+# **M20**
+## _Rules
 
-##**Gameplay**
+## **Gameplay**
 >* You spawn in an empty tile devoid of all monsters.
 >* When ready each player pays an action point to spawn a tile. 
 >* Once the tile is spawned the leader of the group (or the one with the laptop) describes the buildings and vehicles to the players. 
@@ -40,7 +40,7 @@ Another thing I would like to do this switch the resources out for SQLite and kn
 >* If all players are passed out the monsters lose interest. You wake back up in the spawn point regenerated. 
     * For a harder experience feel free to roll to see if you keep your current inventory. 
 
-##**Combat**
+## **Combat**
 Upon entering a structure. Draw the number of monster cards necessary to fill the building. Since all monsters are territorial they attack immediately
 If your health reaches 0 you lose your current equipment and faint until someone comes to rescue you.
 
@@ -54,15 +54,15 @@ Roll 1 D20 for each combat action taking place.
     * Failure means weapon breaks. 
     * Success means weapon is restored and end turn.
 
-##**Action Points**
+## **Action Points**
 * Each player starts at 10 action points everyday.
 
-##**Inventory**
+## **Inventory**
 * Start with a 5 slot bag.
 * Can  pick up better bags for inventory.
 * Each level add 1 additional slot to inventory.
  
-##**Structures**
+## **Structures**
 Each tile has 1 structure on it.
 That structure is decided at random from a pool of structures. Roll for amount of creatures in spawn.
 Structure size is small, medium, or large.
@@ -72,7 +72,7 @@ General rule of thumb on structures:
 * Medium structures have 4 resources and 2 enemy spawns.
 * Large structures have 6 resourrces and 3 enemy spawns.
 
-##**Stats**
+## **Stats**
 Start out with a base of 1 in each category.
 Maximum stat level is 10. 
 
@@ -101,26 +101,26 @@ Weapons are an item that increase your combat effectiveness. This is also broken
 * Uncommon weapons add a maximum of 2 to your roll and have a trait associated with them.
 * Rare weapons add a maximum of 3 to your roll and have a trait associated with them.
 
-######Example Common:
+###### Example Common:
 * Shovel
 * +1 to rolls.
 * Requires 1 strength
 
-######Example uncommon:
+###### Example uncommon:
 * 12 ga shotgun
 * +2 to rolls
 * Requires 2 marksmanship
 * targets two enemies at once.
 
-######Example rare:
+###### Example rare:
 * Chainsaw
 * +3 to rolls.
 * You are a mad man target 4 enemies at once.
 * Requires 5 strength.
 
-##**XP**
+## **XP**
 Even split of xp between attackers unless 1st attacker kills creature all xp goes to that player.
-######_Level_
+###### _Level_
 For each level gain that level amt in skill points
 * 1-2: 200xp
 * 2-3: 300xp
@@ -132,7 +132,7 @@ For each level gain that level amt in skill points
 * 8-9: 900xp
 * 9-10: 1000xp
 
-######_Health_
+###### _Health_
 * Level 1- 100
 * Level 2- 120
 * Level 3- 140
@@ -144,6 +144,6 @@ For each level gain that level amt in skill points
 * Level 9- 260
 * Level 10- 280
 
-######_Characters_
+###### _Characters_
 * Each player starts with 10 stats spread into whatever skill they want.
 * Every level put that number of stat points into stats. So level 2 is a 2 stat point gain. Level 3 is a 3 stat point gain. 
